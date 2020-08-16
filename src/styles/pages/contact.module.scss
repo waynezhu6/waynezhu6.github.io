@@ -1,0 +1,25 @@
+.main{
+    margin: 40px;
+    margin-top: 50px;
+    font-size: 20px;
+
+    .textContainer{
+        display: inline-block
+    }
+
+    .contactContainer{
+        display: inline-block
+    }
+}
+
+.title{
+    font-family: Inter;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.subtext{
+    font-family: Open Sans;
+    font-size: 17px;
+    margin-top: 20px;
+}

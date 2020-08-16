@@ -1,0 +1,97 @@
+.body{
+  position: absolute;
+  padding: 40px;
+  margin-top: 70px;
+  width: 100vw;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 340px auto;
+  z-index: 2;
+}
+
+.sidePane{
+  display: inline-block;
+  position: fixed;
+  width: 340px;
+
+  .appName{
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: bold;
+    border-top: 1px solid black;
+    padding-top: 40px;
+  }
+
+  .appDescription{
+    font-family: Open Sans;
+    font-size: 17px;
+    padding-top: 20px;
+    min-height: 300px;
+    color: #595959;
+  }
+
+  .appTags{
+    font-family: Open Sans;
+    font-size: 17px;
+    padding-top: 20px;
+    color: #595959;
+  }
+
+  .appSource{
+    font-family: Open Sans;
+    font-size: 17px;
+    padding-top: 20px;
+    color: #595959;
+  }
+}
+
+.mainPane{
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 50px;
+
+  .innerGrid{
+    display: grid;
+    grid-template-rows: 74px auto;
+  }
+
+  .navbar{
+    position: fixed;
+    height: 74px;
+    z-index: 2;
+    background-color: white;
+
+    .option{
+      font-family: Inter;
+      font-size: 50px;
+      line-height: 40px;
+      font-weight: bold;
+      display: inline-block;
+      margin-right: 24px;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    .selected{
+      opacity: 1;
+    }
+    
+    .deselected{
+      opacity: 0.3;
+    }
+
+    .label{
+      background-color: #ffff00;
+      font-size: 44px;
+    }
+  }
+
+  .projectsContainer{
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    z-index: 1;
+  }
+}

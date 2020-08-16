@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Grand Hotel';
+  src: url('./fonts/Grand_Hotel/GrandHotel-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./fonts/Open_Sans/OpenSans-Regular.ttf');
+  //src: url('./fonts/Open_Sans/OpenSans-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url('./fonts/Pacifico/Pacifico-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter/Inter-Regular.woff');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/Raleway/Raleway-Regular.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-size: 0px;
+  overflow: auto;
+  //background-color: black; //dark theme
+  //color: white; //dark theme
+  //max-width: 1400px;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  font-size: 0px;
+}
+
+::selection{
+  background: #FFFF00;
+}
