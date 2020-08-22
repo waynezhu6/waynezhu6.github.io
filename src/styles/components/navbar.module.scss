@@ -1,34 +1,45 @@
 .main{
-    overflow: hidden;
-    padding: 40px;
-    padding-bottom: 70px;
-    height: 70px;
-    position: fixed;
-    top: 0;
-    z-index: 3;
-    background-color: white;
-    width: 100%;
-    //max-width: 1400px;
+  overflow: hidden;
+  padding: 40px;
+  padding-bottom: 70px;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  background-color: white;
+  width: 100vw;
 }
 
-.link{
+.name{
+  float: left;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: Inter;
+  font-weight: bold;
+}
+
+.menu{
+  float: right;
+
+  .link{
     text-decoration: none;
     color: black;
-}
 
-.option{
-    display: inline-block;
-    margin-right: 16px;
-    font-family: Inter;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.selected{
-    opacity: 1;
-}
-
-.deselected{
-    opacity: 0.3;
+    .option{
+      display: inline-block;
+      margin-right: 20px;
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .selected{
+      opacity: 1;
+    }
+    
+    .deselected{
+      opacity: 0.3;
+    }
+  }
 }

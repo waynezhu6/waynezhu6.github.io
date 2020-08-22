@@ -34,47 +34,39 @@ const Navbar = (props: Props) => {
 
   const generateLinks = () => {
     //generates link elements for navbar
-    const links = ["About", "Projects", "Experiences", "Contact"];
+    const links = ["About", "Projects", "Contact"];
     let elements = [];
     for(var i = 0; i < links.length; i++){
       let index = i;
-      if(i === selected)
-        elements.push(
-          <Link 
-            to={`/${links[i].toLowerCase()}`} 
-            className={styles.link}
-            key={i}
+      elements.push(
+        <Link 
+          to={`/${links[i].toLowerCase()}`} 
+          className={styles.link}
+          key={i}
+        >
+          <div 
+            className={`${styles.option} ${index === selected ? styles.selected: styles.deselected}`} 
+            onClick={() => clickHandler(index)}
           >
-            <div 
-              className={`${styles.option} ${styles.selected}`} 
-              onClick={() => clickHandler(index)}
-            >
-              {links[i]}
-            </div>
-          </Link>
-        );
-      else
-        elements.push(
-          <Link 
-            key={i}
-            to={`/${links[i].toLowerCase()}`} 
-            className={styles.link}
-          >
-            <div 
-              className={`${styles.option} ${styles.deselected}`} 
-              onClick={() => clickHandler(index)}
-            >
-              {links[i]}
-            </div>
-          </Link>
-        );
+            {links[i]}
+          </div>
+        </Link>
+      )
     }    
     return elements;    
   }
 
   return(
     <div className={styles.main}>
-      {generateLinks()}
+
+      <div className={styles.name}>
+        Wayne Zhu
+      </div>
+
+      <div className={styles.menu}>
+        {generateLinks()}
+      </div>
+
     </div>
   );
 }

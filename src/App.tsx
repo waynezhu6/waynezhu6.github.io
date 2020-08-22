@@ -17,9 +17,9 @@ function App() {
     location, 
     location => location.pathname,
     {
-      from: { opacity: "0", transform: 'translate(100px,0px)' },
+      from: { opacity: "0", transform: 'translate(80px,0px)' },
       enter: { opacity: "1", transform: 'translate(0px,0px)' },
-      leave: { opacity: "0", transform: 'translate(100px,0px)' },
+      leave: { opacity: "0", transform: 'translate(-40px,0px)' },
     }
   );
 

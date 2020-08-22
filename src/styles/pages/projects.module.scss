@@ -1,9 +1,13 @@
 .body{
   position: absolute;
-  padding: 40px;
-  margin-top: 70px;
-  width: 80vw;
-  margin-left: 10vw;
+  margin-top: 120px;
+  width: 100vw;
+}
+
+.main{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .grid{
@@ -16,12 +20,14 @@
   display: inline-block;
   position: fixed;
   width: 340px;
+  height: calc(100vh - 200px);
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 
   .appName{
     font-family: Inter;
     font-size: 24px;
     font-weight: bold;
-    border-top: 1px solid black;
     padding-top: 40px;
   }
 

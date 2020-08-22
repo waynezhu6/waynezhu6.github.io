@@ -8,9 +8,9 @@ const Projects = () => {
   //data of the current selected project
   const [activeIndex, setActiveIndex] = useState(-1);
   const [project, setProject] = useState({
-    name: "App Name",
-    description: "App description goes here",
-    tags: "Tags"
+    name: "My Projects",
+    description: "Click on a project to view details.",
+    tags: "tags will appear here"
   });
   const [projectWidth, setProjectWidth] = useState(0); //project width
   const refs = useRef(Array()); //ref of all project elements
@@ -89,35 +89,37 @@ const Projects = () => {
   return(
     <div className={styles.body}>
 
-      <div className={styles.sidePane}>
-        <div className={styles.appName}>
-          {project.name}
-        </div>
-        <div className={styles.appDescription}>
-          {project.description}
-        </div>
-        <div className={styles.appTags}>
-          {project.tags}
-        </div>
-        <div className={styles.appSource}>
-          Source, Try it out
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-
-        <div>&nsbp;</div>
-
-        <div className={styles.mainPane}>
-          <div className={styles.innerGrid}>
-            <Navbar/>
-            <div>&nsbp;</div>
-            <div className={styles.projectsContainer} ref={projectContainer}>
-              {generateProjects()}
-            </div>
+      <div className={styles.main}>
+        <div className={styles.sidePane}>
+          <div className={styles.appName}>
+            {project.name}
+          </div>
+          <div className={styles.appDescription}>
+            {project.description}
+          </div>
+          <div className={styles.appTags}>
+            {project.tags}
+          </div>
+          <div className={styles.appSource}>
+            Source, Try it out
           </div>
         </div>
 
+        <div className={styles.grid}>
+
+          <div>&nsbp;</div>
+
+          <div className={styles.mainPane}>
+            <div className={styles.innerGrid}>
+              <Navbar/>
+              <div>&nsbp;</div>
+              <div className={styles.projectsContainer} ref={projectContainer}>
+                {generateProjects()}
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>
