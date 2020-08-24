@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import {useSpring, animated} from 'react-spring'
 import styles from '../styles/pages/about.module.scss';
 
+import Experience from '../components/experience';
+import Footer from '../components/footer';
+
 const About = () => {
 
   //const [selected, setSelected] = useState(0);
@@ -13,48 +16,59 @@ const About = () => {
   });
 
   return(
-    <div className={styles.body}>
+    <div className={styles.animated}>
 
-      <div className={styles.main}>
-        <div className={styles.titleContainer}>
-          <div className={styles.titleRegular}>Hi. I'm&nbsp;</div>
-          <div className={styles.titleUnderline}>Wayne Zhu.</div>
-        </div>
+      <div className={styles.scrollbox}>
 
-        <div className={styles.bodyContainer}>
+        <div className={styles.body}>
 
-          <div className={styles.element}>
-            <div className={styles.intro}>
+          {/* <div className={styles.title}>
+            <div className={styles.titleRegular}>Hi. I'm&nbsp;</div>
+            <div className={styles.titleUnderline}>Wayne Zhu</div>
+          </div> */}
+
+          <div className={styles.image}>
+            <img></img>
+          </div>
+
+          <div>
+            <div className={styles.subtitle}>About Me</div>
+
+            <div className={styles.paragraph}>
               {"Hello! My name is Wayne and I'm a 18-year-old \
               developer, currently studying Computer Science \
               as a second-year student at the University of Toronto."}
             </div>
 
-            <div className={styles.intro}>
-              {"I'm currently working as a Full-Stack Developer for Prefix, a startup \
-              backed by the University of Toronto's Hatchery NEST incubation program."}
-            </div>
-
-            <div className={styles.intro}>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud 
-              exercitation ullamco laboris nisi ut aliquip ex ea 
-              commodo consequat. Duis aute irure dolor in reprehenderit 
-              in voluptate velit esse cillum dolore eu fugiat nulla 
-              pariatur. Excepteur sint occaecat cupidatat non proident, 
-              sunt in culpa qui officia deserunt mollit anim id est laborum."
+            <div className={styles.paragraph}>
+              {"On top of my studies, I'm currently working as a Full-Stack Developer for Prefix, \
+              a startup backed by the University of Toronto's Hatchery NEST incubation program."}
             </div>
 
             <div className={styles.resume}>
               View my resume (PDF 181kb).
             </div>
-
           </div>
 
-          <div className={styles.element}>
-            <img className = {styles.image} src = {require('../assets/profilePicture.png')}></img>
+          <div className={styles.separator}></div>
+
+          <div>
+            <div className={styles.subtitle}>Work Experience</div>
+
+            <Experience 
+              time="Apr 2020 - Present" 
+              company="Prefix" 
+              title="Full Stack Developer"
+            />
+          
+            <Experience 
+              time="Jun 2019 - Aug 2019" 
+              company="PointClickCare" 
+              title="Software Engineer Intern"
+            />
           </div>
+
+          <Footer/>
 
         </div>
       </div>

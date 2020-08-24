@@ -7,19 +7,21 @@
   top: 0;
   z-index: 3;
   background-color: white;
-  width: 100vw;
+  width: calc(100vw - 30px);
 }
 
 .name{
   float: left;
   font-size: 20px;
   line-height: 30px;
-  font-family: Inter;
-  font-weight: bold;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
 }
 
 .menu{
   float: right;
+  transform: translateX(30px);
 
   .link{
     text-decoration: none;
@@ -28,10 +30,10 @@
     .option{
       display: inline-block;
       margin-right: 20px;
-      font-family: Inter;
       font-size: 18px;
-      font-weight: bold;
+      font-weight: 500;
       cursor: pointer;
+      user-select: none;
     }
     
     .selected{

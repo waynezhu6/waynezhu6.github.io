@@ -8,10 +8,9 @@ interface Props{
   onClick: Function,
 
   name?: string,
-  imgh?: string,
   img?: string,
-  skills?: string,
-  desc?: string,
+  tags?: string[],
+  description?: string,
   try?: string,
   source?: string
 }
@@ -50,7 +49,7 @@ class Project extends Component<Props, State>{
       >
         <img 
           className={styles.image} 
-          src={require('../assets/projects/' + this.props.imgh)}
+          src={require('../assets/projects/' + this.props.img)}
         />
       </div>
     );

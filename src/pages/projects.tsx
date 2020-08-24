@@ -6,12 +6,16 @@ import projectData from '../data/projectData';
 const Projects = () => {
 
   //data of the current selected project
-  const [activeIndex, setActiveIndex] = useState(-1);
-  const [project, setProject] = useState({
+  const PROJECT_DEFAULT = {
     name: "My Projects",
     description: "Click on a project to view details.",
-    tags: "tags will appear here"
-  });
+    tags: ['tags will', 'appear here'],
+    source: "https://github.com/waynezhu6/waynezhu6.github.io",
+    demo: ""
+  }
+
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const [project, setProject] = useState(PROJECT_DEFAULT);
   const [projectWidth, setProjectWidth] = useState(0); //project width
   const refs = useRef(Array()); //ref of all project elements
   const projectContainer = useRef() as MutableRefObject<HTMLDivElement>;
@@ -43,24 +47,33 @@ const Projects = () => {
     if(!projectContainer.current)
       return 0;
 
+    const SIZE = 250;  
     let containerWidth = projectContainer.current.clientWidth;
-    console.log(containerWidth);
-    let q = Math.floor(containerWidth / 300);
+    let q = Math.floor(containerWidth / SIZE);
     let smaller = containerWidth / (q + 1);
     let bigger = containerWidth / q
 
-    let width = Math.abs(smaller - 300) < Math.abs(bigger - 300) ? smaller : bigger;
+    let width = Math.abs(smaller - SIZE) < Math.abs(bigger - SIZE) ? smaller : bigger;
     return width; 
   }
 
   const onProjectClick = (index: number) => {
-    setActiveIndex(index);
-    let meta = projectData[index];
-    setProject({
-      name: meta.name,
-      description: meta.desc,
-      tags: meta.skills
-    })
+    if(index !== activeIndex){
+      setActiveIndex(index);
+      let meta = projectData[index];
+      setProject({
+        name: meta.name,
+        description: meta.description,
+        tags: meta.tags,
+        source: meta.source,
+        demo: meta.try
+      });
+    }
+    else{
+      setActiveIndex(-1);
+      setProject(PROJECT_DEFAULT);
+    }
+
   }
 
   const generateProjects = () => {
@@ -86,40 +99,69 @@ const Projects = () => {
     return elements;
   }
 
+  const generateTags = (tags: string[]) => {
+    let elements = [];
+    for(const tag of tags){
+      elements.push(<div className={styles.tag}>{tag}</div>)
+    }
+    return elements;
+  }
+
+  const openNewTab = (url: string) => {
+    //opens url in new tab
+    var win = window.open(url, '_blank');
+    win?.focus();
+  }
+
   return(
-    <div className={styles.body}>
+    <div className={styles.animated}>
 
-      <div className={styles.main}>
-        <div className={styles.sidePane}>
-          <div className={styles.appName}>
-            {project.name}
-          </div>
-          <div className={styles.appDescription}>
-            {project.description}
-          </div>
-          <div className={styles.appTags}>
-            {project.tags}
-          </div>
-          <div className={styles.appSource}>
-            Source, Try it out
-          </div>
-        </div>
+      <div className={styles.scrollbox}>
 
-        <div className={styles.grid}>
-
-          <div>&nsbp;</div>
-
-          <div className={styles.mainPane}>
-            <div className={styles.innerGrid}>
-              <Navbar/>
-              <div>&nsbp;</div>
-              <div className={styles.projectsContainer} ref={projectContainer}>
-                {generateProjects()}
-              </div>
+        <div className={styles.body}>
+          <div className={styles.sidePane}>
+            <div className={styles.appName}>
+              {project.name}
+            </div>
+            <div className={styles.appDescription}>
+              {project.description}
+            </div>
+            <div className={styles.appTags}>
+              {generateTags(project.tags)}
+            </div>
+            <div className={styles.appSource}>
+              <button 
+                className={styles.source}
+                onClick={() => openNewTab(project.source)}
+              >
+                Source
+              </button>
+              <button 
+                className={styles.demo}
+                onClick={() => openNewTab(project.demo)}
+              >
+                Demo
+              </button>
             </div>
           </div>
 
+          <div className={styles.grid}>
+
+            <div>&nsbp;</div>
+
+            <div className={styles.mainPane}>
+              <div className={styles.innerGrid}>
+                <Navbar/>
+                <div>&nsbp;</div>
+                <div className={styles.projectsContainer} ref={projectContainer}>
+                  {generateProjects()}
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </div>
 
     </div>

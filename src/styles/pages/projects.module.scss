@@ -1,56 +1,92 @@
-.body{
-  position: absolute;
-  margin-top: 120px;
+.animated{
   width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
 }
 
-.main{
+.scrollbox{
+  padding-top: 110px;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.body{
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
+  padding: 0px 20px 0px 20px;
   margin: auto;
 }
 
 .grid{
   display: grid;
-  grid-template-columns: 340px auto;
+  grid-template-columns: 300px auto;
   z-index: 2;
 }
 
 .sidePane{
   display: inline-block;
   position: fixed;
-  width: 340px;
+  width: 300px;
   height: calc(100vh - 200px);
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
 
   .appName{
-    font-family: Inter;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 500;
     padding-top: 40px;
   }
 
   .appDescription{
-    font-family: Open Sans;
-    font-size: 17px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 300;
     padding-top: 20px;
     min-height: 300px;
     color: #595959;
   }
 
   .appTags{
-    font-family: Open Sans;
-    font-size: 17px;
-    padding-top: 20px;
-    color: #595959;
+    display: block;
+
+    div{
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 300;
+      color: #666666;
+      background-color: rgb(239, 239, 239);
+      padding: 6px;
+      border-radius: 4px;
+      margin-right: 8px;
+      margin-top: 8px;
+    }
   }
 
   .appSource{
-    font-family: Open Sans;
-    font-size: 17px;
     padding-top: 20px;
-    color: #595959;
+
+    button{
+      font-size: 16px;
+      font-weight: 300;
+      margin-right: 8px;
+      border: none;
+      padding: 10px 20px 10px 20px;
+      border-radius: 4px;
+    }
+
+    .source{
+      border: 1px solid #888888;
+      color: #666666;
+      background-color: white;
+    }
+
+    .demo{
+      background-color: #2f89fc;
+      color: white;
+    }
   }
 }
 
@@ -62,19 +98,18 @@
   .innerGrid{
     display: grid;
     grid-template-rows: 74px auto;
+    overflow: hidden;
   }
 
   .navbar{
-    position: fixed;
     height: 74px;
     z-index: 2;
     background-color: white;
 
     .option{
-      font-family: Inter;
       font-size: 50px;
       line-height: 40px;
-      font-weight: bold;
+      font-weight: 500;
       display: inline-block;
       margin-right: 24px;
       user-select: none;
@@ -100,5 +135,6 @@
     display: block;
     width: 100%;
     z-index: 1;
+    padding-bottom: 80px;
   }
 }

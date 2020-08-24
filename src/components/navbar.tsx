@@ -1,5 +1,5 @@
 import React, { useState, SetStateAction, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import styles from '../styles/components/navbar.module.scss';
 
 interface Props{
@@ -15,16 +15,15 @@ const Navbar = (props: Props) => {
         return 0;
       case("/projects"):
         return 1;
-      case("/experiences"):
-        return 2;
       case("/contact"):
-        return 3;
+        return 2;
       default:
         return 0;
     }
   }
 
   const location = useLocation();
+  const history = useHistory();
   const [selected, setSelected] = useState(getLocation());
 
   const clickHandler = (index: number) => {
@@ -59,7 +58,12 @@ const Navbar = (props: Props) => {
   return(
     <div className={styles.main}>
 
-      <div className={styles.name}>
+      <div 
+        className={styles.name} 
+        onClick={() => {
+          clickHandler(0);
+          history.push('/about')
+        }}>
         Wayne Zhu
       </div>
 
