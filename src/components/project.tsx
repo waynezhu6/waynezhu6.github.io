@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/components/project.module.scss';
 
 interface Props{
@@ -15,45 +15,30 @@ interface Props{
   source?: string
 }
 
-interface State{
-  active: boolean
-}
+const Project: React.FC<Props> = (props) => {
 
-class Project extends Component<Props, State>{
+  const [loaded, setLoaded] = useState(false);
 
-  constructor(props: Props){
-    super(props);
-    this.state = {
-      active: false
-    }
+  const onClick = () => {
+    props.onClick(props.index);
   }
 
-  setActive(active: boolean){
-    //sets the active state
-    this.setState(prev => ({
-      ...prev,
-      active: active
-    }));
-  }
+  return(
+    <div 
+      className={`${styles.main} ${props.active ? styles.active : styles.inactive}`} 
+      onMouseDown={() => onClick()}
+      style={{width: props.width - 15, height: props.width - 15}}
+    >
+      <img 
+        className={styles.image} 
+        src={require('../assets/projects/' + props.img)}
+        onLoad={() => setLoaded(true)}
+      />
 
-  onClick(){
-    this.props.onClick(this.props.index);
-  }
+      <div className={!loaded ? styles.placeholder: ""}></div>
 
-  render(){
-    return(
-      <div 
-        className={`${styles.main} ${this.props.active ? styles.active : styles.inactive}`} 
-        onMouseDown={() => this.onClick()}
-        style={{width: this.props.width - 15, height: this.props.width - 15}}
-      >
-        <img 
-          className={styles.image} 
-          src={require('../assets/projects/' + this.props.img)}
-        />
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Project;

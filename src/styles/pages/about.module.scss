@@ -1,16 +1,7 @@
 .animated{
   width: 100vw;
-  height: 100vh;
   position: absolute;
   overflow: hidden;
-}
-
-.scrollbox{
-  padding-top: 110px;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 .body{
@@ -38,7 +29,6 @@
 
   .titleUnderline::selection{
     background-color: lightblue;
-    //background-color: lightsalmon;
   }
 }
 
@@ -72,6 +62,8 @@
   color: #292929;
   cursor: pointer;
   margin-top: 32px;
+  display: block;
+  text-decoration: none;
 }
 
 .image{

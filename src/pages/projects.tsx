@@ -3,13 +3,16 @@ import styles from '../styles/pages/projects.module.scss';
 import Project from '../components/project';
 import projectData from '../data/projectData';
 
-const Projects = () => {
+const Projects: React.FC = () => {
 
   //data of the current selected project
   const PROJECT_DEFAULT = {
     name: "My Projects",
-    description: "Click on a project to view details.",
-    tags: ['tags will', 'appear here'],
+    description: `
+      Some fun little projects that I've made in my spare time,
+      or made as a contribution to extracurricular events.
+    `,
+    tags: ['React', 'Github Pages', 'Typescript'],
     source: "https://github.com/waynezhu6/waynezhu6.github.io",
     demo: ""
   }
@@ -17,7 +20,6 @@ const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
   const [project, setProject] = useState(PROJECT_DEFAULT);
   const [projectWidth, setProjectWidth] = useState(0); //project width
-  const refs = useRef(Array()); //ref of all project elements
   const projectContainer = useRef() as MutableRefObject<HTMLDivElement>;
 
   useEffect(() => {
@@ -33,14 +35,6 @@ const Projects = () => {
     }
 
   }, []);
-
-  const setRef = (element: any, index: number) => {
-    //sets refs for projects
-    if(refs.current.length <= index)
-      refs.current.push(element);
-    else
-      refs.current[index] = element;
-  }
 
   const getDimensions = () => {
     //gets project dimensions based on project container size
@@ -91,7 +85,6 @@ const Projects = () => {
           width={projectWidth}
           onClick={onProjectClick} 
           {...project} 
-          ref={(element) => setRef(element, i)}
         />
       );
       elements.push(element);
@@ -101,8 +94,10 @@ const Projects = () => {
 
   const generateTags = (tags: string[]) => {
     let elements = [];
-    for(const tag of tags){
-      elements.push(<div className={styles.tag}>{tag}</div>)
+    for(var i = 0; i < tags.length; i++){
+      let tag = tags[i];
+      let key = i;
+      elements.push(<div className={styles.tag} key={key}>{tag}</div>);
     }
     return elements;
   }
@@ -116,52 +111,47 @@ const Projects = () => {
   return(
     <div className={styles.animated}>
 
-      <div className={styles.scrollbox}>
-
-        <div className={styles.body}>
-          <div className={styles.sidePane}>
-            <div className={styles.appName}>
-              {project.name}
-            </div>
-            <div className={styles.appDescription}>
-              {project.description}
-            </div>
-            <div className={styles.appTags}>
-              {generateTags(project.tags)}
-            </div>
-            <div className={styles.appSource}>
-              <button 
-                className={styles.source}
-                onClick={() => openNewTab(project.source)}
-              >
-                Source
-              </button>
-              <button 
-                className={styles.demo}
-                onClick={() => openNewTab(project.demo)}
-              >
-                Demo
-              </button>
-            </div>
+      <div className={styles.body}>
+        <div className={styles.sidePane}>
+          <div className={styles.appName}>
+            {project.name}
           </div>
-
-          <div className={styles.grid}>
-
-            <div>&nsbp;</div>
-
-            <div className={styles.mainPane}>
-              <div className={styles.innerGrid}>
-                <Navbar/>
-                <div>&nsbp;</div>
-                <div className={styles.projectsContainer} ref={projectContainer}>
-                  {generateProjects()}
-                </div>
-              </div>
-            </div>
-
+          <div className={styles.appDescription}>
+            {project.description}
+          </div>
+          <div className={styles.appTags}>
+            {generateTags(project.tags)}
+          </div>
+          <div className={styles.appSource}>
+            <button 
+              className={styles.source}
+              onClick={() => openNewTab(project.source)}
+            >
+              Source
+            </button>
+            <button 
+              className={styles.demo}
+              onClick={() => openNewTab(project.demo)}
+            >
+              Demo
+            </button>
           </div>
         </div>
 
+        <div className={styles.grid}>
+
+          <div>&nsbp;</div>
+
+          <div className={styles.mainPane}>
+            <div className={styles.innerGrid}>
+              {/* <Navbar/> */}
+              <div className={styles.projectsContainer} ref={projectContainer}>
+                {generateProjects()}
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>

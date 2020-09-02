@@ -7,7 +7,7 @@ import Navbar from './components/navbar';
 import About from './pages/about';
 import Projects from './pages/projects';
 import Contact from './pages/contact';
-import Experiences from './pages/experiences';
+import Resume from './components/resume';
 
 function App() {
 
@@ -24,21 +24,30 @@ function App() {
   );
 
   return(
-    <div>
-      <Navbar modeHandler={setIsDark}/>
-      {transitions.map(({item, props, key}) => (
-        <animated.div key={key} style={props}>
-          <Switch location={item}>
-            <Route path="/about" component={About}></Route>
-            <Route path="/projects" component={Projects}></Route>
-            <Route path="/experiences" component={Experiences}></Route>
-            <Route path="/contact" component={Contact}></Route>
-            <Route path="/"><Redirect to="/about"/></Route>
-          </Switch>
-        </animated.div>
-      ))}
+    <>
 
-    </div>
+      <Switch>
+        <Route exact path="/resume" component={Resume}/>
+        <Route path="/" render={() =>
+          <div>
+            <Navbar modeHandler={setIsDark}/>
+            {transitions.map(({item, props, key}) => {
+              return(
+                <animated.div key={key} style={props}>
+                  <Switch location={item}>
+                    <Route path="/about" component={About}></Route>
+                    <Route path="/projects" component={Projects}></Route>
+                    <Route path="/contact" component={Contact}></Route>
+                    <Route path="/"><Redirect to="/about"/></Route>
+                  </Switch>
+                </animated.div>
+              )
+            })}
+          </div>
+        }/>
+      </Switch>
+
+    </>
   );
 }
 

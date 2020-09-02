@@ -28,19 +28,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
 
-html {
+html{
   box-sizing: border-box;
   font-size: 0px;
   overflow: auto;
-  //background-color: black; //dark theme
-  //color: white; //dark theme
-  //max-width: 1400px;
   margin: auto;
   overflow-x: hidden;
 }
 
 *, *:before, *:after {
-  font-family: Inter;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.005);
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;

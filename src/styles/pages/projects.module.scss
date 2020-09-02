@@ -1,20 +1,11 @@
 .animated{
   width: 100vw;
-  height: 100vh;
   position: absolute;
   overflow: hidden;
 }
 
-.scrollbox{
-  padding-top: 110px;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
 .body{
-  width: 100%;
+  width: 80%;
   max-width: 1100px;
   padding: 0px 20px 0px 20px;
   margin: auto;
@@ -24,6 +15,7 @@
   display: grid;
   grid-template-columns: 300px auto;
   z-index: 2;
+  height: max-content;
 }
 
 .sidePane{
@@ -75,6 +67,7 @@
       border: none;
       padding: 10px 20px 10px 20px;
       border-radius: 4px;
+      cursor: pointer;
     }
 
     .source{
@@ -97,7 +90,7 @@
 
   .innerGrid{
     display: grid;
-    grid-template-rows: 74px auto;
+    grid-template-rows: auto;
     overflow: hidden;
   }
 

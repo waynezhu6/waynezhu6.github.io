@@ -1,20 +1,12 @@
 .animated{
   width: 100vw;
-  height: 100vh;
   position: absolute;
   overflow: hidden;
 }
 
-.scrollbox{
-  padding-top: 110px;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
 .body{
-  max-width: 800px;
+  width: 800px;
+  max-width: 90%;
   margin: 0 auto 0 auto;
   padding: 0px 20px 0px 20px;
   font-size: 20px;
@@ -33,21 +25,17 @@
 }
 
 form{
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 60px;
-
+  
   input{
     font-size: 16px;
     font-weight: 300;
     padding: 10px;
-    width: calc(50% - 10px);
+    width: 100%;
     border-radius: 4px;
     border: 1px solid grey;
-  }
-
-  .separator{
-    width: 20px;
-    display: inline-block;
+    margin-top: 20px;
   }
 
   textarea{
@@ -63,12 +51,44 @@ form{
   }
 
   .submit{
-    display: block;
-    margin-top: 30px;
     width: 200px;
-    background-color: #2f89fc;
-    color: white;
-    border: none;
+    height: 40px;
+    margin-top: 30px;
+    overflow: hidden;
+
+    .container{
+      transition: 0.4s ease-in-out;
+    }
+
+    .container:hover{
+      transform: translateY(-40px);
+    }
+
+    input{
+      display: block;
+      background-color: #2f89fc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin: 0px;
+      height: 40px;
+      border: 1px solid #2f89fc;
+      transition: 0.25s ease;
+    }
+
+    .checkmark{
+      width: 200px;
+      height: 40px;
+      background-color: #1ECD97;
+      border-radius: 4px;
+    }
+
+  }
+
+  textarea:focus, input:focus{
+    outline: none;
+    border-color: #2f89fc;
+    box-shadow: 0 0 2px #2f89fc;
   }
 }
 

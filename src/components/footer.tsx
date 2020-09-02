@@ -10,6 +10,10 @@ const Footer: React.FC = () => {
     win?.focus();
   }
 
+  const getLastUpdated = () => {
+    return document.lastModified.substring(0, 10);
+  }
+
   return(
     <div className={styles.footer}>
       <div className={styles.icons}>
@@ -17,7 +21,7 @@ const Footer: React.FC = () => {
         <IoLogoLinkedin onClick={() => openNewTab('https://www.linkedin.com/in/wayne-zhu/')}/>
         <IoLogoGithub onClick={() => openNewTab('https://www.github.com/waynezhu6')}/>
       </div>
-      <div className={styles.text}>Last Updated Aug 2020</div>
+      <div className={styles.text}>Last Updated: {`${getLastUpdated()}`}</div>
       {/* <div className={styles.text}>Made with &#x2764;	and React</div> */}
     </div>
   )
