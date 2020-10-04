@@ -7,7 +7,6 @@ import Navbar from './components/navbar';
 import About from './pages/about';
 import Projects from './pages/projects';
 import Contact from './pages/contact';
-import Resume from './components/resume';
 
 function App() {
 
@@ -28,7 +27,6 @@ function App() {
     <>
 
       <Switch>
-        <Route exact path="/resume" component={Resume}/>
         <Route path="/" render={() =>
           <div>
             <Navbar modeHandler={setIsDark}/>

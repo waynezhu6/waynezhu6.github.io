@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../styles/pages/about.module.scss';
-import { Link } from 'react-router-dom';
 
 import Experience from '../components/experience';
 import Footer from '../components/footer';
@@ -40,13 +39,13 @@ const About: React.FC = () => {
             {`I'm currently searching for a Summer 2021 internship!`}
           </div>
 
-          <Link 
+          <a 
             className={styles.resume} 
-            to='/resume'
+            href='https://waynezhu.ca/Wayne_Zhu_Resume.pdf'
             target='_blank'
           >
             View my resume (PDF 189kb).
-          </Link>
+          </a>
         </div>
 
         <div className={styles.separator}></div>
