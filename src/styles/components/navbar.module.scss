@@ -43,3 +43,17 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .main{
+    padding: 25px 40px 10px 25px;
+    width: 100vw;
+  }
+  .menu{
+    float: left;
+    transform: translateX(0px);
+  }
+  .name{
+    display: none;
+  }
+}

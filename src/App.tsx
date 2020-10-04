@@ -25,7 +25,6 @@ function App() {
 
   return(
     <>
-
       <Switch>
         <Route path="/" render={() =>
           <div>
