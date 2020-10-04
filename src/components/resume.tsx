@@ -9,7 +9,7 @@ const Resume: React.FC = () => {
       </Helmet>
       <embed 
         style={{width: "100vw", minHeight: "100vh"}}
-        src='./Wayne_Zhu_CV.pdf' 
+        src='./Wayne_Zhu_Resume.pdf' 
       />
     </div>
   )
