@@ -25,14 +25,19 @@ const About: React.FC = () => {
           <div className={styles.subtitle}>About Me</div>
 
           <div className={styles.paragraph}>
-            {"Hello! My name is Wayne and I'm a 18-year-old \
+            {`Hello! My name is Wayne and I'm a 19-year-old \
             developer, currently studying Computer Science \
-            as a second-year student at the University of Toronto."}
+            as a second-year student at the University of Toronto.`}
           </div>
 
           <div className={styles.paragraph}>
-            {"On top of my studies, I'm currently working as a Full-Stack Developer for Prefix, \
-            a startup backed by the University of Toronto's Hatchery NEST incubation program."}
+            {`On top of my studies, I'm currently working as a Full-Stack Developer for Prefix, \
+            a startup founded by a group of friends and backed by the University of Toronto's \
+            Hatchery NEST incubation program.`}
+          </div>
+
+          <div className={styles.paragraph}>
+            {`I'm currently searching for a Summer 2021 internship!`}
           </div>
 
           <Link 

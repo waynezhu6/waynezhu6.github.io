@@ -56,14 +56,6 @@ form{
     margin-top: 30px;
     overflow: hidden;
 
-    .container{
-      transition: 0.4s ease-in-out;
-    }
-
-    .container:hover{
-      transform: translateY(-40px);
-    }
-
     input{
       display: block;
       background-color: #2f89fc;

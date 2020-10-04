@@ -33,6 +33,7 @@ const Project: React.FC<Props> = (props) => {
         className={styles.image} 
         src={require('../assets/projects/' + props.img)}
         onLoad={() => setLoaded(true)}
+        alt={props.name}
       />
 
       <div className={!loaded ? styles.placeholder: ""}></div>

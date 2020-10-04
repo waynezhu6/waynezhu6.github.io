@@ -20,36 +20,47 @@ const Projects: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
   const [project, setProject] = useState(PROJECT_DEFAULT);
   const [projectWidth, setProjectWidth] = useState(0); //project width
+  const [sidebarHeight, setSidebarHeight] = useState(0); //sidebar max height
   const projectContainer = useRef() as MutableRefObject<HTMLDivElement>;
 
   useEffect(() => {
 
-    setProjectWidth(getDimensions());
+    const setDimensions = () => {
+      //gets project dimensions based on project container size
+      if(!projectContainer.current)
+        return 0;
+  
+      //first set individual projects size
+      const SIZE = 250;  
+      let containerWidth = projectContainer.current.clientWidth - 1;
+      console.log(containerWidth);
+      let q = Math.floor(containerWidth / SIZE);
+      let smaller = containerWidth / (q + 1);
+      let bigger = containerWidth / q
+  
+      let width = Math.abs(smaller - SIZE) < Math.abs(bigger - SIZE) ? smaller : bigger;
+      console.log(width);
+      setProjectWidth(width);
+
+      //then set sidebar size
+      let styles = window.getComputedStyle(projectContainer.current);
+      let height = projectContainer.current.clientHeight;
+      height -= parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+      console.log(height);
+      setSidebarHeight(height);
+    }
+
+    setDimensions();
 
     window.addEventListener('resize', () => {
-      setProjectWidth(getDimensions());
+      setDimensions();
     });
 
     return () => {
       window.removeEventListener('resize', () => {});
     }
 
-  }, []);
-
-  const getDimensions = () => {
-    //gets project dimensions based on project container size
-    if(!projectContainer.current)
-      return 0;
-
-    const SIZE = 250;  
-    let containerWidth = projectContainer.current.clientWidth;
-    let q = Math.floor(containerWidth / SIZE);
-    let smaller = containerWidth / (q + 1);
-    let bigger = containerWidth / q
-
-    let width = Math.abs(smaller - SIZE) < Math.abs(bigger - SIZE) ? smaller : bigger;
-    return width; 
-  }
+  }, [projectContainer.current]);
 
   const onProjectClick = (index: number) => {
     if(index !== activeIndex){
@@ -112,7 +123,7 @@ const Projects: React.FC = () => {
     <div className={styles.animated}>
 
       <div className={styles.body}>
-        <div className={styles.sidePane}>
+        <div className={styles.sidePane} style={{maxHeight: sidebarHeight + 'px'}}>
           <div className={styles.appName}>
             {project.name}
           </div>
@@ -158,28 +169,28 @@ const Projects: React.FC = () => {
   );
 }
 
-const Navbar = () => {
+// const Navbar = () => {
 
-  const [navbarIndex, setNavbarIndex] = useState(0);
+//   const [navbarIndex, setNavbarIndex] = useState(0);
 
-  return(
-    <div className={styles.navbar}>
-      <div 
-        className={`${styles.option} ${navbarIndex === 0 ? styles.selected : styles.deselected}`}
-        onClick={() => setNavbarIndex(0)}
-      >
-        All
-      </div>
+//   return(
+//     <div className={styles.navbar}>
+//       <div 
+//         className={`${styles.option} ${navbarIndex === 0 ? styles.selected : styles.deselected}`}
+//         onClick={() => setNavbarIndex(0)}
+//       >
+//         All
+//       </div>
 
-      <div 
-        className={`${styles.option} ${navbarIndex === 1 ? styles.selected : styles.deselected}`}
-        onClick={() => setNavbarIndex(1)}
-      >
-        Made with <span className={styles.label}>________</span>
-      </div>
+//       <div 
+//         className={`${styles.option} ${navbarIndex === 1 ? styles.selected : styles.deselected}`}
+//         onClick={() => setNavbarIndex(1)}
+//       >
+//         Made with <span className={styles.label}>________</span>
+//       </div>
 
-    </div>
-  );
-}
+//     </div>
+//   );
+// }
 
 export default Projects;

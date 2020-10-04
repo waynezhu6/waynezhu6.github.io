@@ -11,7 +11,9 @@ const Footer: React.FC = () => {
   }
 
   const getLastUpdated = () => {
-    return document.lastModified.substring(0, 10);
+    let date = document.lastModified.substring(0, 10).split('/');
+    let obj = new Date(parseInt(date[2]), parseInt(date[0]) - 1, parseInt(date[1]));
+    return obj.toDateString().replace(/^\S+\s/,'');
   }
 
   return(
@@ -21,7 +23,7 @@ const Footer: React.FC = () => {
         <IoLogoLinkedin onClick={() => openNewTab('https://www.linkedin.com/in/wayne-zhu/')}/>
         <IoLogoGithub onClick={() => openNewTab('https://www.github.com/waynezhu6')}/>
       </div>
-      <div className={styles.text}>Last Updated: {`${getLastUpdated()}`}</div>
+      <div className={styles.text}>Last Updated: {getLastUpdated()}</div>
       {/* <div className={styles.text}>Made with &#x2764;	and React</div> */}
     </div>
   )

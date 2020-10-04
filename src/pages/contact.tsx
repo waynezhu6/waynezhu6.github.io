@@ -23,8 +23,9 @@ const Contact: React.FC = () => {
 
         <iframe 
           name="hidden_iframe" 
-          style={{display:'none'}} 
-        ></iframe>
+          style={{display:'none'}}
+          title={"hidden iframe"} 
+        />
 
         <form 
           action='https://docs.google.com/forms/u/1/d/e/1FAIpQLSfHtS1qNBlX-53WYeCwY7ohLf1rZ0Qrkas61GCsp9l46RacFQ/formResponse'

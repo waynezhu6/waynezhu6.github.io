@@ -12,6 +12,7 @@ import Resume from './components/resume';
 function App() {
 
   const [isDark, setIsDark] = useState(false);
+  console.log(isDark);
   const location = useLocation();
   const transitions = useTransition(
     location, 
