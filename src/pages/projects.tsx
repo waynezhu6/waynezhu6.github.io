@@ -33,20 +33,17 @@ const Projects: React.FC = () => {
       //first set individual projects size
       const SIZE = 250;  
       let containerWidth = projectContainer.current.clientWidth - 1;
-      console.log(containerWidth);
       let q = Math.floor(containerWidth / SIZE);
       let smaller = containerWidth / (q + 1);
       let bigger = containerWidth / q
   
       let width = Math.abs(smaller - SIZE) < Math.abs(bigger - SIZE) ? smaller : bigger;
-      console.log(width);
       setProjectWidth(width);
 
       //then set sidebar size
       let styles = window.getComputedStyle(projectContainer.current);
       let height = projectContainer.current.clientHeight;
       height -= parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
-      console.log(height);
       setSidebarHeight(height);
     }
 
