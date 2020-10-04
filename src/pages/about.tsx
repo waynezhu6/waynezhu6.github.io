@@ -44,7 +44,7 @@ const About: React.FC = () => {
             href='https://waynezhu.ca/Wayne_Zhu_Resume.pdf'
             target='_blank'
           >
-            View my resume (PDF 189kb).
+            View my resume (PDF 30kb).
           </a>
         </div>
 

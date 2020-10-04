@@ -138,8 +138,8 @@ const Projects: React.FC = () => {
               Source
             </button>
             <button 
-              className={styles.demo}
-              onClick={() => openNewTab(project.demo)}
+              className={project.demo ? styles.demo : styles.nodemo}
+              onClick={() => {if(project.demo)openNewTab(project.demo)}}
             >
               Demo
             </button>

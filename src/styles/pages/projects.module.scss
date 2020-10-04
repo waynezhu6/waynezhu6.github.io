@@ -72,6 +72,7 @@
       padding: 10px 20px 10px 20px;
       border-radius: 4px;
       cursor: pointer;
+      outline: none;
     }
 
     .source{
@@ -83,6 +84,10 @@
     .demo{
       background-color: #2f89fc;
       color: white;
+    }
+
+    .nodemo{
+      display: none;
     }
   }
 }

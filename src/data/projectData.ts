@@ -1,7 +1,7 @@
 const projectData = [
   {
     name: "QVC", 
-    img: "fractal(h).png", 
+    img: "QVC.png", 
     tags: ['React', 'GCP', 'Socket.io', 'Typescript'], 
     description: `
     (Q)uarantine (V)ideo (C)lient! I am trapped in my home indefinitely and this is my 
