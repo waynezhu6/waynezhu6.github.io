@@ -40,6 +40,7 @@ const Contact: React.FC = () => {
             placeholder="Name"
             required
             readOnly={formDisabled}
+            disabled={formDisabled}
           />
           <div className={styles.separator}/>
           <input 
@@ -48,26 +49,23 @@ const Contact: React.FC = () => {
             placeholder="Email"
             required
             readOnly={formDisabled}
-
+            disabled={formDisabled}
           />
           <textarea 
             name="entry.1078839895"
             placeholder="Message"
             required
             readOnly={formDisabled}
+            disabled={formDisabled}
           />
           
           <div className={styles.submit}>
-
-            <div className={styles.container}>
               <input 
+                className={formDisabled ? styles.submitInactive : styles.submitActive}
                 type="submit" 
-                value="Submit"
+                value={formDisabled ? "Recieved. Thanks!" : "Submit"}
                 disabled={formDisabled}
               />
-              <div className={styles.checkmark}>yes</div>
-            </div>
-
           </div>
 
         </form> 

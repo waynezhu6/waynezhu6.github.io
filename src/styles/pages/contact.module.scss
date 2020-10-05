@@ -56,7 +56,7 @@ form{
     margin-top: 30px;
     overflow: hidden;
 
-    input{
+    .submitActive{
       display: block;
       background-color: #2f89fc;
       color: white;
@@ -68,11 +68,16 @@ form{
       transition: 0.25s ease;
     }
 
-    .checkmark{
-      width: 200px;
+    .submitInactive{
+      display: block;
+      background-color: #1FD560;
+      color: white;
+      border: none;
+      cursor: default;
+      outline: none;
+      margin: 0px;
       height: 40px;
-      background-color: #1ECD97;
-      border-radius: 4px;
+      transition: 0.25s ease;
     }
 
   }
