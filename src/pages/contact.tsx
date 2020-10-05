@@ -29,18 +29,16 @@ const Contact: React.FC = () => {
 
         <form 
           action='https://docs.google.com/forms/u/1/d/e/1FAIpQLSfHtS1qNBlX-53WYeCwY7ohLf1rZ0Qrkas61GCsp9l46RacFQ/formResponse'
-          method="post" 
+          method="POST" 
           target="hidden_iframe"
           onSubmit={() => {onSubmit()}}
         >
-
           <input 
             name="entry.67477018"
             type="text" 
             placeholder="Name"
             required
             readOnly={formDisabled}
-            disabled={formDisabled}
           />
           <div className={styles.separator}/>
           <input 
@@ -49,14 +47,12 @@ const Contact: React.FC = () => {
             placeholder="Email"
             required
             readOnly={formDisabled}
-            disabled={formDisabled}
           />
           <textarea 
             name="entry.1078839895"
             placeholder="Message"
             required
             readOnly={formDisabled}
-            disabled={formDisabled}
           />
           
           <div className={styles.submit}>
