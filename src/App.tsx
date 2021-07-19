@@ -24,28 +24,17 @@ function App() {
   );
 
   return(
-    <>
-      <Switch>
-        <Route path="/" render={() =>
-          <div>
-            <Navbar modeHandler={setIsDark}/>
-            {transitions.map(({item, props, key}) => {
-              return(
-                <animated.div key={key} style={props}>
-                  <Switch location={item}>
-                    <Route path="/about" component={About}></Route>
-                    <Route path="/projects" component={Projects}></Route>
-                    <Route path="/contact" component={Contact}></Route>
-                    <Route path="/"><Redirect to="/about"/></Route>
-                  </Switch>
-                </animated.div>
-              )
-            })}
-          </div>
-        }/>
-      </Switch>
-
-    </>
+    <div className="gradient">
+      <div className="main">
+        <Navbar modeHandler={setIsDark}/>
+        <Switch>
+            <Route path="/about" component={About}></Route>
+            <Route path="/projects" component={Projects}></Route>
+            <Route path="/contact" component={Contact}></Route>
+            <Route path="/"><Redirect to="/about"/></Route>
+        </Switch>
+      </div>
+    </div>
   );
 }
 

@@ -62,14 +62,21 @@ const Projects: React.FC = () => {
   const onProjectClick = (index: number) => {
     if(index !== activeIndex){
       setActiveIndex(index);
-      let meta = projectData[index];
-      setProject({
-        name: meta.name,
-        description: meta.description,
-        tags: meta.tags,
-        source: meta.source,
-        demo: meta.try
-      });
+      
+      if(index !== -1){
+        let meta = projectData[index];
+        setProject({
+          name: meta.name,
+          description: meta.description,
+          tags: meta.tags,
+          source: meta.source,
+          demo: meta.try
+        });
+      }
+      else{
+        setProject(PROJECT_DEFAULT);
+      }
+
     }
     else{
       setActiveIndex(-1);

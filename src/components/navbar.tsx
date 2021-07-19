@@ -7,68 +7,31 @@ interface Props{
 }
 
 const Navbar = (props: Props) => {
-
-  const getLocation = () => {
-    //returns a selected index mapped to the current location url
-    switch(location.pathname){
-      case("/about"):
-        return 0;
-      case("/projects"):
-        return 1;
-      case("/contact"):
-        return 2;
-      default:
-        return 0;
-    }
-  }
-
-  const location = useLocation();
+  
   const history = useHistory();
-  const [selected, setSelected] = useState(getLocation());
 
-  const clickHandler = (index: number) => {
-    //set selected index on link click
-    setSelected(index);
-  }
-
-  const generateLinks = () => {
+  const renderLinks = () => {
     //generates link elements for navbar
-    const links = ["About", "Projects", "Contact"];
-    let elements = [];
-    for(var i = 0; i < links.length; i++){
-      let index = i;
-      elements.push(
-        <Link 
-          to={`/${links[i].toLowerCase()}`} 
-          className={styles.link}
-          key={i}
-        >
-          <div 
-            className={`${styles.option} ${index === selected ? styles.selected: styles.deselected}`} 
-            onClick={() => clickHandler(index)}
-          >
-            {links[i]}
-          </div>
-        </Link>
-      )
-    }    
-    return elements;    
+    const links = ["/about", "/projects", "/contact"];
+    const labels = ["About", "Projects", "Contact"];
+    return links.map((link, i) => (
+      <Link to={link} className={styles.link} key={i}>
+        <div className={styles.option}>
+          {labels[i]}
+        </div>
+      </Link>
+    ));  
   }
 
   return(
     <div className={styles.main}>
 
-      <div 
-        className={styles.name} 
-        onClick={() => {
-          clickHandler(0);
-          history.push('/about')
-        }}>
+      <div className={styles.name} onClick={() => {history.push('/about')}}>
         Wayne Zhu
       </div>
 
       <div className={styles.menu}>
-        {generateLinks()}
+        {renderLinks()}
       </div>
 
     </div>
