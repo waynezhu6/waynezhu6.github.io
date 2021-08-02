@@ -54,9 +54,15 @@ const About: React.FC = () => {
           <div className={styles.subtitle}>Work Experience</div>
 
           <Experience 
-            time="Apr 2020 - Present" 
+            time="Apr 2021 - Present" 
             company="Prefix" 
-            title="Full Stack Developer"
+            title="Software Developer Intern"
+          />
+
+          <Experience 
+            time="Apr 2020 - Aug 2020" 
+            company="Prefix" 
+            title="Full Stack Developer Intern"
           />
         
           <Experience 
