@@ -55,7 +55,7 @@ const About: React.FC = () => {
 
           <Experience 
             time="Apr 2021 - Present" 
-            company="Prefix" 
+            company="EQ Works" 
             title="Software Developer Intern"
           />
 
