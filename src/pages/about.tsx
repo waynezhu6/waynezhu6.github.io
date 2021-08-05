@@ -26,17 +26,18 @@ const About: React.FC = () => {
           <div className={styles.paragraph}>
             {`Hello! My name is Wayne and I'm a 19-year-old \
             developer, currently studying Computer Science \
-            as a second-year student at the University of Toronto.`}
+            as a third-year student at the University of Toronto.`}
           </div>
 
           <div className={styles.paragraph}>
-            {`On top of my studies, I'm currently working as a Full-Stack Developer for Prefix, \
-            a startup founded by a group of friends and backed by the University of Toronto's \
-            Hatchery NEST incubation program.`}
+            {`On top of my studies, I'm also currently working as a \
+            Software Developer Intern for EQ Works, a Toronto-based \
+            data analytics firm. Feel free to view my resume below for \
+            more details about my work experience.`}
           </div>
 
           <div className={styles.paragraph}>
-            {`I'm currently searching for a Summer 2021 internship!`}
+            {`I'm currently searching for a Summer 2022 internship!`}
           </div>
 
           <a 
@@ -44,7 +45,7 @@ const About: React.FC = () => {
             href='https://waynezhu.ca/Wayne_Zhu_Resume.pdf'
             target='_blank'
           >
-            View my resume (PDF 30kb).
+            View my resume (PDF 31kb).
           </a>
         </div>
 
