@@ -7,7 +7,7 @@ const projectData = [
     (Q)uarantine (V)ideo (C)lient! I am trapped in my home indefinitely and this is my 
     desperate attempt to recreate the in-person movie watching experience with friends.
     `,
-    try: "http://35.202.216.223/",
+    try: "https://waynezhu.ca/qvc",
     source: "https://github.com/waynezhu6/QVC"
   },
   {

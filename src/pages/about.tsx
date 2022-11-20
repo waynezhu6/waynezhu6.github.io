@@ -17,32 +17,32 @@ const About: React.FC = () => {
         </div> */}
 
         <div className={styles.image}>
-          <img></img>
+          <img src=""></img>
         </div>
 
         <div>
           <div className={styles.subtitle}>About Me</div>
 
           <div className={styles.paragraph}>
-            {`Hello! My name is Wayne and I'm a 19-year-old \
+            {`Hello! My name is Wayne and I'm a 21-year-old \
             developer, currently studying Computer Science \
-            as a third-year student at the University of Toronto.`}
+            as a fourth-year student at the University of Toronto.`}
           </div>
 
           <div className={styles.paragraph}>
-            {`On top of my studies, I'm also currently working as a \
-            Software Developer Intern for EQ Works, a Toronto-based \
-            data analytics firm. Feel free to view my resume below for \
-            more details about my work experience.`}
+            {`Most recently, I worked as a Software Engineer Intern for \ 
+            Meta, where I wrote tools to estimate the peak capacity \
+            of internal services. Feel free to view my resume below for \ 
+            more details about my work experiences.`}
           </div>
 
           <div className={styles.paragraph}>
-            {`I'm currently searching for a Summer 2022 internship!`}
+            {`I'm currently searching for a Winter/Spring 2023 internship!`}
           </div>
 
           <a 
             className={styles.resume} 
-            href='https://waynezhu.ca/Wayne_Zhu_Resume.pdf'
+            href='https://waynezhu.me/Wayne_Zhu_Resume.pdf'
             target='_blank'
           >
             View my resume (PDF 31kb).
@@ -55,7 +55,19 @@ const About: React.FC = () => {
           <div className={styles.subtitle}>Work Experience</div>
 
           <Experience 
-            time="Apr 2021 - Present" 
+            time="Sep 2022 - Present" 
+            company="Intel" 
+            title="Software Engineer Intern"
+          />
+
+          <Experience 
+            time="May 2022 - Aug 2022" 
+            company="Meta" 
+            title="Software Engineer Intern"
+          />
+
+          <Experience 
+            time="Apr 2021 - Aug 2021" 
             company="EQ Works" 
             title="Software Developer Intern"
           />
