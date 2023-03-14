@@ -17,7 +17,7 @@ const About: React.FC = () => {
         </div> */}
 
         <div className={styles.image}>
-          <img src=""></img>
+          <img src={require('../assets/me.jpeg')}></img>
         </div>
 
         <div>
@@ -30,14 +30,15 @@ const About: React.FC = () => {
           </div>
 
           <div className={styles.paragraph}>
-            {`Most recently, I worked as a Software Engineer Intern for \ 
+            {`I'm currently working at Intel the FPGA Platform Designer team. Before that, \
+            I worked as a Software Engineer Intern for \ 
             Meta, where I wrote tools to estimate the peak capacity \
             of internal services. Feel free to view my resume below for \ 
             more details about my work experiences.`}
           </div>
 
           <div className={styles.paragraph}>
-            {`I'm currently searching for a Winter/Spring 2023 internship!`}
+            {`I'm currently looking for a 2024 New Grad position!`}
           </div>
 
           <a 
@@ -53,6 +54,12 @@ const About: React.FC = () => {
 
         <div>
           <div className={styles.subtitle}>Work Experience</div>
+
+          <Experience 
+            time="(Incoming Jun 2023)" 
+            company="DoorDash" 
+            title="Software Engineer Intern"
+          />
 
           <Experience 
             time="Sep 2022 - Present" 
