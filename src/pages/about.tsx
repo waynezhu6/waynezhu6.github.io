@@ -30,7 +30,7 @@ const About: React.FC = () => {
           </div>
 
           <div className={styles.paragraph}>
-            {`I'm currently working at Intel the FPGA Platform Designer team. Before that, \
+            {`I'm currently working at Intel as part of FPGA Platform Designer team. Prior to that, \
             I worked as a Software Engineer Intern for \ 
             Meta, where I wrote tools to estimate the peak capacity \
             of internal services. Feel free to view my resume below for \ 
@@ -46,7 +46,7 @@ const About: React.FC = () => {
             href='https://waynezhu.me/Wayne_Zhu_Resume.pdf'
             target='_blank'
           >
-            View my resume (PDF 31kb).
+            View my resume (PDF 32kb).
           </a>
         </div>
 
