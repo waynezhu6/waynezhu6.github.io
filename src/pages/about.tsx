@@ -24,21 +24,19 @@ const About: React.FC = () => {
           <div className={styles.subtitle}>About Me</div>
 
           <div className={styles.paragraph}>
-            {`Hello! My name is Wayne and I'm a 21-year-old \
-            developer, currently studying Computer Science \
-            as a fourth-year student at the University of Toronto.`}
+            {`Hello! My name is Wayne, and I'm a 22-year-old software engineer and recent University of \
+            Toronto graduate majoring in computer science, currently based in San Francisco.`}
           </div>
 
           <div className={styles.paragraph}>
-            {`I'm currently working at Intel as part of FPGA Platform Designer team. Prior to that, \
-            I worked as a Software Engineer Intern for \ 
-            Meta, where I wrote tools to estimate the peak capacity \
-            of internal services. Feel free to view my resume below for \ 
-            more details about my work experiences.`}
+            {`I'm currently working at DoorDash as part of the Experimental Platform Team, where I'm creating \
+            internal tools that help power our data science operations. Previously, I also interned at Intel \
+            working on chip design tools, and at Meta, where I wrote tools to estimate the peak capacity \
+            of internal services.`}
           </div>
 
           <div className={styles.paragraph}>
-            {`I'm currently looking for a 2024 New Grad position!`}
+            {`Feel free to look at my resume, and thanks for visiting!`}
           </div>
 
           <a 
@@ -56,40 +54,62 @@ const About: React.FC = () => {
           <div className={styles.subtitle}>Work Experience</div>
 
           <Experience 
-            time="(Incoming Jun 2023)" 
+            logoPath={require('../assets/logos/doordash.svg')}
+            time="Jun 2024 - Present" 
+            company="DoorDash" 
+            title="Software Engineer"
+            location="San Francisco, CA"
+          />
+
+          <Experience 
+            logoPath={require('../assets/logos/doordash.svg')}
+            time="May 2023 - Aug 2023" 
             company="DoorDash" 
             title="Software Engineer Intern"
+            location="Toronto, Canada"
           />
 
           <Experience 
-            time="Sep 2022 - Present" 
+            logoPath={require('../assets/logos/intel.svg')}
+            time="Sep 2022 - Apr 2023" 
             company="Intel" 
             title="Software Engineer Intern"
+            location="San Jose, CA"
           />
 
           <Experience 
-            time="May 2022 - Aug 2022" 
+            logoPath={require('../assets/logos/meta.svg')}
+            time="May 2022 - Aug 2023" 
             company="Meta" 
             title="Software Engineer Intern"
+            location="Menlo Park, CA"
           />
 
           <Experience 
-            time="Apr 2021 - Aug 2021" 
+            logoPath={require('../assets/logos/eqworks.svg')}
+            time="May 2021 - Aug 2021" 
             company="EQ Works" 
             title="Software Developer Intern"
+            location="Toronto, Canada"
           />
 
           <Experience 
-            time="Apr 2020 - Aug 2020" 
+            logoPath={require('../assets/logos/prefix.jpeg')}
+            fullLogo
+            time="Jun 2019 - Aug 2019" 
             company="Prefix" 
             title="Full Stack Developer Intern"
+            location="Toronto, Canada"
           />
-        
+
           <Experience 
+            logoPath={require('../assets/logos/pointclickcare.jpeg')}
             time="Jun 2019 - Aug 2019" 
             company="PointClickCare" 
             title="Software Engineer Intern"
+            location="Mississauga, Canada"
           />
+
         </div>
 
         <Footer/>

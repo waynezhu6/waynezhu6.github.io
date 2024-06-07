@@ -1,20 +1,38 @@
-.footer{
-  margin-top: 150px;
-  margin-bottom: 60px;
+.footer {
+  margin-top: 96px;
+  margin-bottom: 48px;
 }
 
-.text{
+.text {
   font-size: 16px;
   font-weight: 400;
-  color: #B3B3B3;
+  color: #d5d5d5;
   margin-top: 10px;
   line-height: 24px;
 }
 
-.icons{
+.entry {
+  font-size: 16px;
+  display: inline-block;
+  margin-right: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  color: black;
+  opacity: 0.3;
+}
+
+.updated {
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 300;
+  color: black;
+  opacity: 0.3;
+}
+
+.icons {
   margin-top: 10px;
 
-  svg{
+  svg {
     font-size: 30px;
     color: #B3B3B3;
     margin-right: 10px;
